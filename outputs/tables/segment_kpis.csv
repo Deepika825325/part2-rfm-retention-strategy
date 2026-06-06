@@ -1,0 +1,11 @@
+segment_name,recency,frequency,monetary,ticket_count,return_rate,avg_discount
+At Risk,163.6,3.94,3233.39,0.6,0.05,0.25
+Champions,20.65,6.38,4920.77,1.46,0.07,0.27
+Discount Sensitive,140.75,2.31,1484.67,0.53,0.05,0.41
+Dormant,221.45,1.21,792.82,0.3,0.05,0.24
+High Value Unhappy,148.16,5.93,4625.94,2.5,0.11,0.27
+Loyal Customers,57.21,5.5,3939.5,1.31,0.06,0.28
+New Customers,19.88,1.0,743.42,0.28,0.11,0.29
+Potential Loyalists,20.8,2.06,1489.16,0.47,0.06,0.29
+Promising,67.14,2.3,1930.41,0.6,0.08,0.24
+Regular Customers,110.99,1.48,922.8,0.41,0.08,0.23

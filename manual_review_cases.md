@@ -1,6 +1,6 @@
 # Manual Review Cases
 
-These customers require manual review because automated retention decisions are not obvious.
+These customers require manual review because automated segmentation alone may not provide the optimal retention decision.
 
 ---
 
@@ -8,11 +8,18 @@ These customers require manual review because automated retention decisions are 
 
 Segment: Discount Sensitive
 
+Metrics:
+
+* Frequency = 6
+* Monetary = 2955.57
+* Support Tickets = 2
+* Discount Usage = 36.3%
+
 Reason:
-High purchase frequency and moderate monetary value, but significant discount dependency and active support interactions.
+Customer purchases frequently and generates reasonable revenue, but relies heavily on discounts and has active support interactions.
 
 Recommended Action:
-Offer bundle-based promotions instead of direct discounts.
+Offer bundle promotions and loyalty rewards instead of direct discounts.
 
 ---
 
@@ -20,11 +27,17 @@ Offer bundle-based promotions instead of direct discounts.
 
 Segment: Potential Loyalists
 
+Metrics:
+
+* Frequency = 4
+* Monetary = 2550.91
+* Sentiment = -1.00
+
 Reason:
-Recent activity and good purchase frequency, but highly negative sentiment score.
+Strong purchasing behavior suggests future loyalty, but extremely negative sentiment indicates dissatisfaction.
 
 Recommended Action:
-Customer satisfaction follow-up before upsell campaigns.
+Conduct customer satisfaction outreach before upsell campaigns.
 
 ---
 
@@ -32,11 +45,18 @@ Customer satisfaction follow-up before upsell campaigns.
 
 Segment: Loyal Customers
 
+Metrics:
+
+* Frequency = 5
+* Monetary = 3770.16
+* Support Tickets = 2
+* Sentiment = -0.68
+
 Reason:
-Strong purchasing behavior but negative support experience.
+Customer is valuable but support interactions indicate potential churn risk.
 
 Recommended Action:
-Priority customer support outreach.
+Priority support outreach and service recovery.
 
 ---
 
@@ -44,11 +64,17 @@ Priority customer support outreach.
 
 Segment: Loyal Customers
 
+Metrics:
+
+* Frequency = 11
+* Monetary = 8130.16
+* Sentiment = -0.245
+
 Reason:
-High revenue contribution but declining sentiment.
+High-value customer with signs of declining satisfaction.
 
 Recommended Action:
-Retention call and loyalty recognition.
+Retention call and loyalty recognition program.
 
 ---
 
@@ -56,8 +82,15 @@ Retention call and loyalty recognition.
 
 Segment: High Value Unhappy
 
+Metrics:
+
+* Frequency = 7
+* Monetary = 4868.86
+* Support Tickets = 3
+* Sentiment = -0.227
+
 Reason:
-High spend combined with multiple support issues.
+High revenue contribution combined with repeated support issues.
 
 Recommended Action:
 Dedicated account recovery intervention.
@@ -68,11 +101,17 @@ Dedicated account recovery intervention.
 
 Segment: Champions
 
+Metrics:
+
+* Frequency = 6
+* Monetary = 3435.59
+* Sentiment = -0.415
+
 Reason:
-Excellent purchase behavior but negative sentiment signals.
+Excellent purchasing behavior but negative customer sentiment.
 
 Recommended Action:
-Customer success outreach.
+Customer success outreach to prevent future dissatisfaction.
 
 ---
 
@@ -80,8 +119,15 @@ Customer success outreach.
 
 Segment: Potential Loyalists
 
+Metrics:
+
+* Frequency = 4
+* Monetary = 2128.09
+* Support Tickets = 2
+* Sentiment = -0.94
+
 Reason:
-Good purchasing pattern but severe negative sentiment.
+Strong purchasing signals conflict with severe dissatisfaction.
 
 Recommended Action:
 Investigate service issues before retention campaign.
@@ -92,11 +138,18 @@ Investigate service issues before retention campaign.
 
 Segment: High Value Unhappy
 
+Metrics:
+
+* Frequency = 9
+* Monetary = 7523.74
+* Support Tickets = 6
+* Sentiment = -0.455
+
 Reason:
-Extremely high revenue customer with highest support burden.
+Extremely valuable customer with the highest support burden observed.
 
 Recommended Action:
-Highest retention priority.
+Highest retention priority with executive-level intervention.
 
 ---
 
@@ -104,8 +157,15 @@ Highest retention priority.
 
 Segment: High Value Unhappy
 
+Metrics:
+
+* Frequency = 4
+* Monetary = 4444.30
+* Support Tickets = 2
+* Sentiment = -0.385
+
 Reason:
-Large historical value but declining engagement.
+Strong historical value but declining engagement and satisfaction.
 
 Recommended Action:
 Personalized win-back strategy.
@@ -116,8 +176,15 @@ Personalized win-back strategy.
 
 Segment: Potential Loyalists
 
+Metrics:
+
+* Frequency = 4
+* Monetary = 4192.59
+* Support Tickets = 2
+* Sentiment = -0.565
+
 Reason:
-High value and good engagement but worsening sentiment.
+High-value customer with promising engagement but worsening sentiment.
 
 Recommended Action:
-Retention outreach and satisfaction assessment.
+Retention outreach and satisfaction assessment before growth campaigns.

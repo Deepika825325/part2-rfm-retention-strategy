@@ -2,7 +2,31 @@
 
 ## Objective
 
-The objective of this analysis is to identify customer segments using RFM methodology and behavioral signals, then recommend targeted retention actions under a limited retention budget.
+The objective of this analysis is to identify customer segments using RFM (Recency, Frequency, Monetary) analysis combined with behavioral and support signals, and recommend targeted retention actions under a limited retention budget.
+
+---
+
+# Segmentation Methodology
+
+Customer segmentation was performed using:
+
+### RFM Features
+
+* Recency: Days since last purchase
+* Frequency: Total number of orders
+* Monetary: Total customer spend
+
+### Additional Behavioral Signals
+
+To improve business relevance beyond RFM:
+
+* Support ticket count
+* Customer sentiment score
+* Return rate
+* Average discount usage
+* Category diversity
+
+These additional signals help identify customers who may appear valuable based on purchases but show signs of dissatisfaction or churn risk.
 
 ---
 
@@ -13,17 +37,19 @@ The objective of this analysis is to identify customer segments using RFM method
 Customer Count: 344
 
 Characteristics:
-- Highest purchase frequency
-- Highest monetary contribution
-- Lowest churn risk (10.5%)
+
+* Highest purchase frequency
+* Highest monetary contribution
+* Lowest churn rate (10.5%)
 
 Recommended Action:
-- VIP loyalty rewards
-- Early access to product launches
-- Referral programs
+
+* VIP rewards program
+* Early product access
+* Referral incentives
 
 Expected Business Value:
-Protect highest revenue customers and increase advocacy.
+Protect highest-value customers and increase advocacy.
 
 ---
 
@@ -32,13 +58,15 @@ Protect highest revenue customers and increase advocacy.
 Customer Count: 256
 
 Characteristics:
-- Frequent purchasers
-- Strong engagement
-- Low churn risk (27.7%)
+
+* Frequent repeat purchases
+* Strong engagement
+* Low churn rate (27.7%)
 
 Recommended Action:
-- Personalized product recommendations
-- Loyalty point accelerators
+
+* Personalized recommendations
+* Loyalty point accelerators
 
 Expected Business Value:
 Increase customer lifetime value.
@@ -50,16 +78,18 @@ Increase customer lifetime value.
 Customer Count: 364
 
 Characteristics:
-- Recent purchasers
-- Moderate order frequency
-- Low churn risk (19.5%)
+
+* Recent purchasers
+* Growing engagement
+* Low churn rate (19.5%)
 
 Recommended Action:
-- Cross-sell campaigns
-- Category discovery campaigns
+
+* Cross-sell campaigns
+* Category discovery campaigns
 
 Expected Business Value:
-Convert into loyal customers.
+Convert into Loyal Customers.
 
 ---
 
@@ -68,12 +98,14 @@ Convert into loyal customers.
 Customer Count: 208
 
 Characteristics:
-- Recent acquisition
-- Limited purchase history
+
+* Recent acquisition
+* Limited purchase history
 
 Recommended Action:
-- Welcome journey
-- First-to-second purchase incentives
+
+* Welcome journey
+* First-to-second purchase incentives
 
 Expected Business Value:
 Improve onboarding and retention.
@@ -85,15 +117,17 @@ Improve onboarding and retention.
 Customer Count: 138
 
 Characteristics:
-- Moderate engagement
-- Growing purchase activity
+
+* Moderate activity
+* Positive future potential
 
 Recommended Action:
-- Product education campaigns
-- Personalized recommendations
+
+* Product education campaigns
+* Personalized recommendations
 
 Expected Business Value:
-Move customers into Loyal segment.
+Move customers toward Loyal status.
 
 ---
 
@@ -102,15 +136,17 @@ Move customers into Loyal segment.
 Customer Count: 112
 
 Characteristics:
-- High spend
-- Multiple support tickets
-- Negative sentiment
-- Churn risk 72.3%
+
+* High spend customers
+* Multiple support tickets
+* Negative sentiment
+* Churn rate: 72.3%
 
 Recommended Action:
-- Priority support outreach
-- Service recovery actions
-- Dedicated retention offers
+
+* Dedicated support intervention
+* Service recovery program
+* Personalized retention offers
 
 Expected Business Value:
 Prevent loss of high-revenue customers.
@@ -122,15 +158,18 @@ Prevent loss of high-revenue customers.
 Customer Count: 269
 
 Characteristics:
-- Heavy discount usage
-- High churn risk (74.7%)
+
+* Heavy discount dependency
+* Churn rate: 74.7%
 
 Recommended Action:
-- Targeted coupon campaigns
-- Bundle offers
+
+* Bundle offers
+* Targeted promotions
+* Value-based messaging
 
 Expected Business Value:
-Retain price-sensitive customers while controlling discount costs.
+Retain customers while controlling discount costs.
 
 ---
 
@@ -139,13 +178,15 @@ Retain price-sensitive customers while controlling discount costs.
 Customer Count: 389
 
 Characteristics:
-- Long inactivity period
-- Previously valuable customers
-- Churn risk 78.7%
+
+* Long inactivity period
+* Previously valuable customers
+* Churn rate: 78.7%
 
 Recommended Action:
-- Win-back campaigns
-- Personalized reactivation emails
+
+* Win-back campaigns
+* Personalized reactivation emails
 
 Expected Business Value:
 Recover previously active customers.
@@ -157,48 +198,48 @@ Recover previously active customers.
 Customer Count: 121
 
 Characteristics:
-- Extremely inactive
-- Highest churn risk (90.1%)
+
+* Extremely inactive customers
+* Highest churn rate (90.1%)
 
 Recommended Action:
-- Low-cost reactivation campaign
-- Minimal retention spend
+
+* Low-cost reactivation campaigns
+* Limited retention investment
 
 Expected Business Value:
-Selective recovery of customers with residual value.
+Selective recovery of residual customer value.
 
 ---
 
 # Budget Prioritization
 
-Assuming a limited retention budget:
+Retention resources should focus on segments with the largest recoverable revenue opportunity.
 
-Priority 1:
-- High Value Unhappy
+Priority Score was determined using:
 
-Priority 2:
-- At Risk
+Priority Score = Customer Count × Average Revenue × Churn Rate
 
-Priority 3:
-- Discount Sensitive
+### Priority Ranking
 
-Priority 4:
-- Potential Loyalists
+| Rank | Segment             | Reason                                           |
+| ---- | ------------------- | ------------------------------------------------ |
+| 1    | High Value Unhappy  | High revenue and high churn risk                 |
+| 2    | At Risk             | Large customer base and high churn               |
+| 3    | Discount Sensitive  | Significant churn risk and retention opportunity |
+| 4    | Potential Loyalists | Easy conversion into Loyal Customers             |
+| 5    | Loyal Customers     | Revenue growth opportunity                       |
+| 6    | Champions           | Low churn risk, maintenance focus                |
+| 7    | New Customers       | Early lifecycle nurturing                        |
+| 8    | Promising           | Medium-term growth opportunity                   |
+| 9    | Dormant             | Lowest expected ROI                              |
 
-Priority 5:
-- Loyal Customers
+---
 
-Priority 6:
-- Champions
+# Key Business Insights
 
-Priority 7:
-- New Customers
-
-Priority 8:
-- Promising
-
-Priority 9:
-- Dormant
-
-Rationale:
-High Value Unhappy and At Risk customers represent the highest recoverable revenue opportunity.
+* Dormant customers exhibit the highest churn rate (90.1%).
+* Champions exhibit the lowest churn rate (10.5%).
+* High Value Unhappy customers generate substantial revenue but have elevated churn risk.
+* Discount dependency is strongly associated with churn.
+* Combining RFM with behavioral signals produces more actionable retention strategies than RFM alone.

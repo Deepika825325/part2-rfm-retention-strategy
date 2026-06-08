@@ -1,190 +1,277 @@
 # Manual Review Cases
 
-These customers require manual review because automated segmentation alone may not provide the optimal retention decision.
+## Objective
+
+While most customers can be assigned to a segment through predefined business rules, some customers require manual review because their behavior contains conflicting signals.
+
+These customers may show characteristics of multiple segments simultaneously. The purpose of this review is to demonstrate how business judgment can complement rule-based segmentation.
 
 ---
 
-## CUST00001
+# Case 1
 
-Segment: Discount Sensitive
+## Customer ID: CUST00001
 
-Metrics:
+### Observations
 
-* Frequency = 6
-* Monetary = 2955.57
+* Frequency = 6 purchases
+* Monetary Value = ₹2955.57
 * Support Tickets = 2
-* Discount Usage = 36.3%
+* Average Sentiment = 0.14
+* Average Discount Usage = 36.3%
+* Assigned Segment = Discount Sensitive
 
-Reason:
-Customer purchases frequently and generates reasonable revenue, but relies heavily on discounts and has active support interactions.
+### Why This Case Is Ambiguous
 
-Recommended Action:
-Offer bundle promotions and loyalty rewards instead of direct discounts.
+The customer behaves like a loyal repeat buyer but also relies heavily on discounts. The purchase frequency suggests strong engagement, while discount dependency suggests future churn risk if promotions are reduced.
 
----
+### Recommended Action
 
-## CUST00005
+Provide personalized product bundles rather than blanket discounts.
 
-Segment: Potential Loyalists
+### Business Reasoning
 
-Metrics:
-
-* Frequency = 4
-* Monetary = 2550.91
-* Sentiment = -1.00
-
-Reason:
-Strong purchasing behavior suggests future loyalty, but extremely negative sentiment indicates dissatisfaction.
-
-Recommended Action:
-Conduct customer satisfaction outreach before upsell campaigns.
+The objective is to maintain spending behavior while gradually reducing dependence on promotional offers.
 
 ---
 
-## CUST00006
+# Case 2
 
-Segment: Loyal Customers
+## Customer ID: CUST00005
 
-Metrics:
+### Observations
 
-* Frequency = 5
-* Monetary = 3770.16
-* Support Tickets = 2
-* Sentiment = -0.68
+* Recency = 38 days
+* Frequency = 4 purchases
+* Monetary Value = ₹2550.91
+* Negative Support Sentiment = -1.00
+* Assigned Segment = Potential Loyalists
 
-Reason:
-Customer is valuable but support interactions indicate potential churn risk.
+### Why This Case Is Ambiguous
 
-Recommended Action:
-Priority support outreach and service recovery.
+Purchase activity suggests growth potential, but extremely negative support sentiment introduces retention risk.
 
----
+### Recommended Action
 
-## CUST00014
+Follow up with a customer service recovery campaign before sending promotional offers.
 
-Segment: Loyal Customers
+### Business Reasoning
 
-Metrics:
-
-* Frequency = 11
-* Monetary = 8130.16
-* Sentiment = -0.245
-
-Reason:
-High-value customer with signs of declining satisfaction.
-
-Recommended Action:
-Retention call and loyalty recognition program.
+Resolving dissatisfaction is likely to generate more value than offering additional discounts.
 
 ---
 
-## CUST00025
+# Case 3
 
-Segment: High Value Unhappy
+## Customer ID: CUST00006
 
-Metrics:
+### Observations
 
-* Frequency = 7
-* Monetary = 4868.86
-* Support Tickets = 3
-* Sentiment = -0.227
+* Frequency = 5 purchases
+* Monetary Value = ₹3770.16
+* Ticket Count = 2
+* Sentiment Score = -0.68
+* Assigned Segment = Loyal Customers
 
-Reason:
-High revenue contribution combined with repeated support issues.
+### Why This Case Is Ambiguous
 
-Recommended Action:
-Dedicated account recovery intervention.
+Customer purchasing behavior indicates loyalty, but support interactions reveal dissatisfaction.
 
----
+### Recommended Action
 
-## CUST00030
+Assign customer to proactive support outreach while maintaining loyalty benefits.
 
-Segment: Champions
+### Business Reasoning
 
-Metrics:
-
-* Frequency = 6
-* Monetary = 3435.59
-* Sentiment = -0.415
-
-Reason:
-Excellent purchasing behavior but negative customer sentiment.
-
-Recommended Action:
-Customer success outreach to prevent future dissatisfaction.
+Ignoring service issues may eventually convert a loyal customer into an at-risk customer.
 
 ---
 
-## CUST00033
+# Case 4
 
-Segment: Potential Loyalists
+## Customer ID: CUST00014
 
-Metrics:
+### Observations
 
-* Frequency = 4
-* Monetary = 2128.09
-* Support Tickets = 2
+* Frequency = 11 purchases
+* Monetary Value = ₹8130.16
+* Ticket Count = 2
+* Sentiment Score = -0.25
+* Assigned Segment = Loyal Customers
+
+### Why This Case Is Ambiguous
+
+Very high historical value suggests strong retention importance, yet support experience is deteriorating.
+
+### Recommended Action
+
+Escalate customer to premium support handling.
+
+### Business Reasoning
+
+The cost of intervention is significantly lower than the potential revenue loss from churn.
+
+---
+
+# Case 5
+
+## Customer ID: CUST00025
+
+### Observations
+
+* Monetary Value = ₹4868.86
+* Ticket Count = 3
+* Negative Sentiment = -0.23
+* Assigned Segment = High Value Unhappy
+
+### Why This Case Is Ambiguous
+
+Customer remains valuable despite repeated support issues.
+
+### Recommended Action
+
+Immediate service recovery outreach and issue resolution.
+
+### Business Reasoning
+
+This customer represents a high-value account with elevated churn risk.
+
+---
+
+# Case 6
+
+## Customer ID: CUST00030
+
+### Observations
+
+* Recency = 5 days
+* Frequency = 6 purchases
+* Monetary Value = ₹3435.59
+* Ticket Count = 2
+* Sentiment = -0.42
+* Assigned Segment = Champions
+
+### Why This Case Is Ambiguous
+
+The customer qualifies as a Champion but displays negative support sentiment.
+
+### Recommended Action
+
+Maintain VIP treatment while investigating support concerns.
+
+### Business Reasoning
+
+High-value customers should not be allowed to accumulate unresolved dissatisfaction.
+
+---
+
+# Case 7
+
+## Customer ID: CUST00033
+
+### Observations
+
+* Recency = 12 days
+* Frequency = 4 purchases
+* Monetary Value = ₹2128.09
+* Ticket Count = 2
 * Sentiment = -0.94
+* Assigned Segment = Potential Loyalists
 
-Reason:
-Strong purchasing signals conflict with severe dissatisfaction.
+### Why This Case Is Ambiguous
 
-Recommended Action:
-Investigate service issues before retention campaign.
+Recent activity is encouraging, but support sentiment is among the lowest observed.
 
----
+### Recommended Action
 
-## CUST00042
+Prioritize customer support recovery before engagement campaigns.
 
-Segment: High Value Unhappy
+### Business Reasoning
 
-Metrics:
-
-* Frequency = 9
-* Monetary = 7523.74
-* Support Tickets = 6
-* Sentiment = -0.455
-
-Reason:
-Extremely valuable customer with the highest support burden observed.
-
-Recommended Action:
-Highest retention priority with executive-level intervention.
+Customer growth potential may be lost if dissatisfaction remains unresolved.
 
 ---
 
-## CUST00051
+# Case 8
 
-Segment: High Value Unhappy
+## Customer ID: CUST00034
 
-Metrics:
+### Observations
 
-* Frequency = 4
-* Monetary = 4444.30
-* Support Tickets = 2
-* Sentiment = -0.385
+* Frequency = 6 purchases
+* Monetary Value = ₹3353.01
+* Ticket Count = 3
+* Sentiment = -0.23
+* Assigned Segment = Loyal Customers
 
-Reason:
-Strong historical value but declining engagement and satisfaction.
+### Why This Case Is Ambiguous
 
-Recommended Action:
-Personalized win-back strategy.
+Strong transaction history conflicts with repeated service interactions.
+
+### Recommended Action
+
+Conduct targeted satisfaction outreach.
+
+### Business Reasoning
+
+This customer contributes meaningful revenue and should be protected from preventable churn.
 
 ---
 
-## CUST00053
+# Case 9
 
-Segment: Potential Loyalists
+## Customer ID: CUST00042
 
-Metrics:
+### Observations
 
-* Frequency = 4
-* Monetary = 4192.59
-* Support Tickets = 2
-* Sentiment = -0.565
+* Frequency = 9 purchases
+* Monetary Value = ₹7523.74
+* Ticket Count = 6
+* Sentiment = -0.46
+* Assigned Segment = High Value Unhappy
 
-Reason:
-High-value customer with promising engagement but worsening sentiment.
+### Why This Case Is Ambiguous
 
-Recommended Action:
-Retention outreach and satisfaction assessment before growth campaigns.
+High spending continues despite substantial support friction.
+
+### Recommended Action
+
+Assign dedicated account management and service recovery.
+
+### Business Reasoning
+
+This customer represents one of the highest-value retention opportunities in the dataset.
+
+---
+
+# Case 10
+
+## Customer ID: CUST00053
+
+### Observations
+
+* Frequency = 4 purchases
+* Monetary Value = ₹4192.59
+* Ticket Count = 2
+* Sentiment = -0.57
+* Assigned Segment = Potential Loyalists
+
+### Why This Case Is Ambiguous
+
+Strong revenue contribution suggests future loyalty potential, but customer satisfaction indicators are deteriorating.
+
+### Recommended Action
+
+Combine personalized recommendations with proactive support intervention.
+
+### Business Reasoning
+
+A successful recovery could move this customer into the Loyal Customer segment.
+
+---
+
+# Summary
+
+The reviewed customers demonstrate situations where automated segmentation alone is insufficient. In most cases, conflicting signals emerge between purchasing behavior and customer experience indicators.
+
+The review highlights the importance of combining RFM metrics with support sentiment, complaint history, and engagement signals before making final retention decisions.

@@ -1,115 +1,249 @@
-# D2C Customer Retention Strategy using RFM Segmentation
+# D2C Customer Churn Intelligence
 
-## Project Overview
+## Part 2: RFM Segmentation & Retention Strategy
 
-This project builds a customer retention framework using RFM (Recency, Frequency, Monetary) analysis combined with behavioral and support signals.
+### Objective
 
-The objective is to identify customer segments requiring retention attention before deploying a machine learning churn model.
+The objective of this project is to identify customer groups requiring different retention interventions before deploying a machine learning churn prediction model.
+
+Customers were segmented using RFM (Recency, Frequency, Monetary) analysis and enriched with behavioral and support-related signals to develop actionable retention strategies and campaign prioritization recommendations.
+
+---
+
+## Business Problem
+
+Customer retention is often more cost-effective than customer acquisition. Before building predictive churn models, businesses need an interpretable framework to identify valuable customers, understand behavioral patterns, and prioritize retention investments.
+
+This project uses transaction history, support interactions, customer engagement signals, and purchasing behavior to create meaningful customer segments and recommend targeted retention actions.
+
+---
 
 ## Dataset
 
-The analysis uses customer order history, support interactions, engagement behavior, and campaign-related attributes provided in the assessment dataset.
+The analysis uses the following datasets:
+
+| Dataset                  | Description                                  |
+| ------------------------ | -------------------------------------------- |
+| customers.csv            | Customer demographic and profile information |
+| orders.csv               | Customer purchase transactions               |
+| support_tickets.csv      | Customer support interactions                |
+| web_events_snapshot.csv  | Website and engagement activity              |
+| intervention_history.csv | Previous campaign information                |
+| churn_labels.csv         | Observed churn outcomes                      |
+
+---
 
 ## Methodology
 
-### Step 1: RFM Feature Engineering
+### 1. Data Preparation
 
-For each customer:
+* Loaded and validated all datasets
+* Converted date columns to datetime format
+* Handled missing values
+* Removed future order records occurring after the snapshot date to prevent data leakage
 
-* Recency = Days since last purchase
-* Frequency = Total orders placed
-* Monetary = Total customer spend
+### 2. RFM Feature Engineering
 
-### Step 2: RFM Scoring
+RFM features were created using customer order history:
 
-Customers were assigned quintile-based scores:
+* **Recency** → Days since last purchase
+* **Frequency** → Total number of orders
+* **Monetary** → Total customer spending
 
-* R Score (1–5)
-* F Score (1–5)
-* M Score (1–5)
+### 3. Additional Behavioral Features
 
-Higher scores indicate stronger customer value and engagement.
+To improve segmentation quality, RFM metrics were combined with additional behavioral and support signals:
 
-### Step 3: Additional Behavioral Signals
+* Return Rate
+* Average Discount Usage
+* Category Diversity
+* Support Ticket Count
+* Support Sentiment
+* Average Resolution Time
+* Website Sessions
+* Campaign Clicks
+* Email Opens
+* Last Visit Activity
 
-To improve segmentation quality beyond RFM, the following signals were incorporated:
+### 4. RFM Scoring
 
-* Support ticket count
-* Customer sentiment
-* Return rate
-* Average discount usage
-* Category diversity
+Customers were assigned R, F, and M scores using quintile-based scoring.
 
-### Step 4: Customer Segmentation
+* R Score: 1–5
+* F Score: 1–5
+* M Score: 1–5
 
-Ten customer segments were created:
+Combined scores were used as the foundation for customer segmentation.
 
-* Champions
-* Loyal Customers
-* Potential Loyalists
-* New Customers
-* Promising
-* High Value Unhappy
-* Discount Sensitive
-* At Risk
-* Dormant
-* Regular Customers
+### 5. Customer Segmentation
+
+Segments were created using both RFM scores and behavioral indicators.
+
+| Segment             |
+| ------------------- |
+| Champions           |
+| Loyal Customers     |
+| Potential Loyalists |
+| New Customers       |
+| Promising           |
+| Regular Customers   |
+| Discount Sensitive  |
+| At Risk             |
+| Dormant             |
+| High Value Unhappy  |
 
 ### Segmentation Logic
 
-High-value customers with strong RFM scores were classified as Champions.
+* High R, F, M → Champions
+* High Frequency customers → Loyal Customers
+* Recently active customers with growth potential → Potential Loyalists
+* First-time recent buyers → New Customers
+* Moderate engagement customers → Promising
+* Average behavior customers → Regular Customers
+* High discount dependency → Discount Sensitive
+* High-value customers with declining activity → At Risk
+* Long inactive customers → Dormant
+* High-value customers with negative support experience → High Value Unhappy
 
-Customers exhibiting high support burden and negative sentiment were classified as High Value Unhappy.
+---
 
-Customers with high discount dependence were classified as Discount Sensitive.
+## Churn Validation
 
-Customers with long inactivity periods were classified as At Risk or Dormant.
+Segment quality was validated using observed churn outcomes from the provided churn dataset.
 
-### Key Findings
+Key findings:
 
-| Segment            | Customers | Churn Rate |
-| ------------------ | --------: | ---------: |
-| Dormant            |       121 |      90.1% |
-| At Risk            |       389 |      78.7% |
-| High Value Unhappy |       112 |      72.3% |
-| Champions          |       344 |      10.5% |
+* Champions exhibited the lowest churn risk.
+* Loyal Customers demonstrated strong retention behavior.
+* Dormant customers showed the highest churn rate.
+* At Risk and High Value Unhappy customers represented major retention opportunities.
 
-### Retention Prioritization
+This validation confirmed that the segmentation framework aligns with real customer outcomes.
 
-Retention budget should focus on:
+---
+
+## Campaign Budget Prioritization
+
+To allocate a limited retention budget, segments were ranked using:
+
+**Priority Score = Customer Count × Average Monetary Value × Churn Rate**
+
+This prioritization balances:
+
+* Revenue impact
+* Segment size
+* Churn probability
+
+Highest priority segments:
 
 1. High Value Unhappy
 2. At Risk
-3. Discount Sensitive
+3. Loyal Customers
+4. Potential Loyalists
+5. Champions
 
-These segments provide the highest recoverable revenue opportunity.
+---
 
 ## Repository Structure
 
-rfm_segmentation.ipynb
+```text
+part2-rfm-retention-strategy/
+│
+├── data/
+│   ├── customers.csv
+│   ├── orders.csv
+│   ├── support_tickets.csv
+│   ├── web_events_snapshot.csv
+│   ├── intervention_history.csv
+│   └── churn_labels.csv
+│
+├── outputs/
+│   ├── charts/
+│   └── tables/
+│
+├── rfm_segmentation.ipynb
+├── segments.csv
+├── retention_strategy.md
+├── manual_review_cases.md
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
 
-segments.csv
+---
 
-retention_strategy.md
+## Outputs
 
-manual_review_cases.md
+### Notebook
 
-requirements.txt
+**rfm_segmentation.ipynb**
 
-outputs/charts/
+Contains:
 
-outputs/tables/
+* Data preparation
+* Leakage prevention
+* RFM feature engineering
+* Behavioral feature creation
+* RFM scoring
+* Customer segmentation
+* Segment analysis
+* Churn validation
+* Retention recommendations
 
-## How to Run
+### Segment File
 
-pip install -r requirements.txt
+**segments.csv**
 
-Open:
+Contains:
 
-rfm_segmentation.ipynb
+* customer_id
+* segment_name
+* recency
+* frequency
+* monetary
+* return_rate
+* avg_discount
+* ticket_count
+* category_diversity
+* churn_next_60d
 
-and run all notebook cells.
+### Strategy Report
 
-## Author
+**retention_strategy.md**
 
-Deepika Kumari
+Contains:
+
+* Segment descriptions
+* Retention actions
+* Expected business value
+* Budget prioritization strategy
+
+### Manual Review Report
+
+**manual_review_cases.md**
+
+Contains:
+
+* 10+ customer cases
+* Ambiguous retention decisions
+* Dataset-backed business reasoning
+
+---
+
+## Key Business Insights
+
+* Customer behavior varies significantly across segments.
+* High-value customers with poor support experiences represent the highest revenue risk.
+* Dormant and At Risk customers exhibit the strongest churn tendencies.
+* Discount dependency is associated with increased retention risk.
+* Personalized interventions are more effective than blanket promotional campaigns.
+
+---
+
+## Conclusion
+
+RFM analysis combined with behavioral and support signals successfully identified customer groups with significantly different churn risks and business value.
+
+Champions and Loyal Customers demonstrated the strongest retention and revenue contribution, while Dormant, At Risk, and High Value Unhappy customers represented the highest retention priority. Churn validation confirmed that the proposed segmentation aligns closely with observed customer outcomes.
+
+The resulting segmentation framework provides an interpretable and actionable foundation for customer retention decisions before deploying a predictive machine learning model.

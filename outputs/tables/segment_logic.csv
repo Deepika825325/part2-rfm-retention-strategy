@@ -1,0 +1,11 @@
+Segment,Logic
+Champions,High R High F High M
+Loyal Customers,Recent and Frequent
+Potential Loyalists,Recent Moderate Frequency
+New Customers,Recent Single Purchase
+High Value Unhappy,High Value Negative Support Experience
+Discount Sensitive,Heavy Discount Usage
+At Risk,Low Recency High Value
+Dormant,Very Low Recency Low Frequency
+Promising,Moderate Recency Moderate Frequency
+Regular Customers,Remaining Customers

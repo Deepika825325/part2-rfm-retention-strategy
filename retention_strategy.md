@@ -1,340 +1,97 @@
-# Retention Strategy Report
-
-## Objective
-
-The objective of this analysis is to identify customer groups that require different retention interventions before deploying a machine learning churn prediction model.
-
-Customers were segmented using RFM (Recency, Frequency, Monetary) analysis and enriched with behavioral and support-related signals including return rate, discount usage, support interactions, customer sentiment, category diversity, and website activity.
-
----
-
-# Segment-Level Retention Strategy
-
-## 1. Champions
-
-### Customer Profile
-
-* Recently active customers
-* High purchase frequency
-* High spending levels
-* Strong engagement and loyalty
-* Lowest observed churn rate
-
-### Business Importance
-
-Champions represent the highest-value customers and contribute significantly to overall revenue.
-
-### Recommended Action
-
-* VIP loyalty programs
-* Early access to new products
-* Exclusive rewards and benefits
-* Personalized appreciation campaigns
-
-### Expected Business Value
-
-Protect long-term customer value and strengthen brand loyalty.
-
----
-
-## 2. Loyal Customers
-
-### Customer Profile
-
-* Frequent purchasers
-* Consistent buying behavior
-* Strong revenue contribution
-
-### Business Importance
-
-Loyal Customers form the core repeat-purchase customer base.
-
-### Recommended Action
-
-* Loyalty point acceleration
-* Product bundle recommendations
-* Subscription programs
-* Cross-sell campaigns
-
-### Expected Business Value
-
-Increase customer lifetime value and purchase frequency.
-
----
-
-## 3. Potential Loyalists
-
-### Customer Profile
-
-* Recently active customers
-* Moderate purchase frequency
-* Growing engagement levels
-
-### Business Importance
-
-These customers have strong potential to become Loyal Customers.
-
-### Recommended Action
-
-* Personalized product recommendations
-* Category-based promotions
-* Product discovery campaigns
-* Engagement-focused email journeys
-
-### Expected Business Value
-
-Increase conversion into higher-value customer segments.
-
----
-
-## 4. New Customers
-
-### Customer Profile
-
-* Recent first-time buyers
-* Limited purchase history
-* Early-stage relationship with the brand
-
-### Business Importance
-
-The first purchase experience strongly influences future retention.
-
-### Recommended Action
-
-* Welcome campaigns
-* Product education content
-* First-to-second purchase incentives
-* Onboarding email journeys
-
-### Expected Business Value
-
-Increase repeat purchase rates and customer activation.
-
----
-
-## 5. Promising Customers
-
-### Customer Profile
-
-* Moderate recency
-* Moderate purchase activity
-* Positive growth potential
-
-### Business Importance
-
-These customers show early signs of engagement but require nurturing.
-
-### Recommended Action
-
-* Personalized recommendations
-* Limited-time engagement campaigns
-* Category exploration offers
-
-### Expected Business Value
-
-Move customers toward the Loyal Customer segment.
-
----
-
-## 6. Regular Customers
-
-### Customer Profile
-
-* Average purchase behavior
-* Average engagement levels
-* Moderate churn risk
-
-### Business Importance
-
-Represents a significant portion of the customer base.
-
-### Recommended Action
-
-* Seasonal promotions
-* Product recommendations
-* Periodic engagement campaigns
-
-### Expected Business Value
-
-Prevent gradual disengagement and improve retention.
-
----
-
-## 7. Discount Sensitive Customers
-
-### Customer Profile
-
-* High discount dependency
-* Promotion-driven purchasing behavior
-* Elevated churn risk
-
-### Business Importance
-
-Revenue from this segment is highly dependent on discount availability.
-
-### Recommended Action
-
-* Personalized coupon targeting
-* Bundle offers instead of blanket discounts
-* Promotion optimization strategies
-
-### Expected Business Value
-
-Maintain revenue while reducing unnecessary discount spending.
-
----
-
-## 8. At Risk Customers
-
-### Customer Profile
-
-* Historically valuable customers
-* Reduced recent activity
-* Declining engagement levels
-* High churn probability
-
-### Business Importance
-
-Represents customers with significant historical value who may soon leave.
-
-### Recommended Action
-
-* Personalized win-back campaigns
-* Special retention offers
-* Customer outreach programs
-* Re-engagement communications
-
-### Expected Business Value
-
-Recover valuable customers before churn occurs.
-
----
-
-## 9. Dormant Customers
-
-### Customer Profile
-
-* Long period without purchases
-* Minimal engagement activity
-* Highest observed churn rate
-
-### Business Importance
-
-These customers have largely disengaged from the business.
-
-### Recommended Action
-
-* Low-cost reactivation campaigns
-* Comeback offers
-* Re-engagement email sequences
-
-### Expected Business Value
-
-Recover a small portion of inactive customers at controlled cost.
-
----
-
-## 10. High Value Unhappy Customers
-
-### Customer Profile
-
-* High monetary value
-* Multiple support interactions
-* Negative support sentiment
-* Elevated churn probability
-
-### Business Importance
-
-This segment represents the highest revenue preservation opportunity.
-
-These customers combine high spending behavior with negative support experiences and increased support-ticket activity.
-
-### Recommended Action
-
-* Immediate service recovery outreach
-* Dedicated support escalation
-* Personalized issue resolution
-* Satisfaction follow-up programs
-
-### Expected Business Value
-
-Prevent loss of high-value customers and protect recurring revenue.
-
----
-
 # Campaign Budget Prioritization
+
+## Budget Assumption
+
+For planning purposes, a retention budget of **₹500,000** is assumed.
+
+The objective is to maximize revenue protection by prioritizing customer groups with the highest combination of:
+
+* Revenue contribution
+* Customer volume
+* Churn risk
+* Probability of successful intervention
+
+Retention investments should focus on customers whose expected value recovery exceeds the cost of engagement.
+
+---
 
 ## Prioritization Method
 
-To allocate a limited retention budget, segments were ranked using:
+Segments were ranked using:
 
 **Priority Score = Customer Count × Average Monetary Value × Churn Rate**
 
 This approach balances:
 
-* Revenue impact
-* Customer volume
-* Probability of churn
+* Revenue at risk
+* Size of the affected customer population
+* Likelihood of customer loss
 
-Segments with higher scores represent greater potential revenue loss and therefore receive higher retention priority.
+Higher scores indicate greater potential business impact from retention efforts.
 
 ---
 
-## Priority Ranking
+## Recommended Budget Allocation
 
-### Priority 1 – High Value Unhappy
+| Priority | Segment             | Budget Allocation | Budget (₹) | Reason                                                     |
+| -------- | ------------------- | ----------------: | ---------: | ---------------------------------------------------------- |
+| 1        | High Value Unhappy  |               30% |    150,000 | High spend, elevated churn risk, strong recovery potential |
+| 2        | At Risk             |               25% |    125,000 | Historically valuable customers with declining engagement  |
+| 3        | Loyal Customers     |               20% |    100,000 | Protect recurring revenue streams                          |
+| 4        | Potential Loyalists |               15% |     75,000 | High growth opportunity at moderate intervention cost      |
+| 5        | Champions           |               10% |     50,000 | Retain satisfaction and reinforce loyalty                  |
 
-**Reason**
+Dormant, Regular Customers, and New Customers should receive lower-cost automated campaigns rather than intensive retention spending.
 
-* High revenue contribution
-* Elevated churn risk
-* Strong ROI from intervention
+---
 
-### Priority 2 – At Risk
+## Success Metrics
 
-**Reason**
+Retention effectiveness should be measured using segment-specific KPIs.
 
-* Historically valuable customers
-* High probability of churn
-* Strong recovery potential
+| Segment             | Primary Success Metric            |
+| ------------------- | --------------------------------- |
+| Champions           | Retention Rate                    |
+| Loyal Customers     | Repeat Purchase Rate              |
+| Potential Loyalists | Conversion to Loyal Customers     |
+| New Customers       | Second Purchase Rate              |
+| Promising           | Engagement Rate                   |
+| Regular Customers   | Repeat Purchase Rate              |
+| Discount Sensitive  | Margin Improvement                |
+| At Risk             | Reactivation Rate                 |
+| Dormant             | Win-back Rate                     |
+| High Value Unhappy  | Customer Satisfaction Improvement |
 
-### Priority 3 – Loyal Customers
+---
 
-**Reason**
+# Expected Business Impact
 
-* Significant recurring revenue contribution
-* Preventive retention is cost-effective
+If retention efforts successfully reduce churn within the highest-priority segments, the business can expect:
 
-### Priority 4 – Potential Loyalists
+* Improved customer lifetime value
+* Reduced customer acquisition dependency
+* Higher repeat purchase rates
+* Better customer satisfaction outcomes
+* Greater revenue protection from high-value customers
 
-**Reason**
-
-* Strong future growth opportunity
-* Lower retention cost than customer acquisition
-
-### Priority 5 – Champions
-
-**Reason**
-
-* Already highly engaged
-* Require maintenance rather than aggressive intervention
+Particular emphasis should be placed on High Value Unhappy and At Risk customers, where successful intervention protects both current revenue and future customer lifetime value.
 
 ---
 
 # Strategic Recommendations
 
-1. Prioritize revenue preservation before broad promotional spending.
-2. Focus retention investment on customers with both high value and elevated churn risk.
-3. Use service recovery initiatives before offering monetary incentives.
-4. Deliver personalized interventions based on segment behavior.
-5. Continuously monitor segment migration to evaluate retention effectiveness.
+1. Prioritize service recovery before financial incentives for dissatisfied high-value customers.
+2. Allocate the majority of retention spending toward segments with the highest revenue-at-risk scores.
+3. Use automated campaigns for lower-value dormant customers to control intervention costs.
+4. Track customer movement between segments over time to measure retention effectiveness.
+5. Continuously refine segment rules using observed campaign outcomes and future churn modeling results.
 
 ---
 
 # Conclusion
 
-RFM analysis combined with behavioral and support signals successfully identified customer groups with significantly different churn risks and business value.
+The RFM segmentation framework, enhanced with behavioral and support signals, provides an interpretable and actionable approach for retention decision-making before machine learning deployment.
 
-Champions and Loyal Customers demonstrated the strongest retention and revenue contribution, while Dormant, At Risk, and High Value Unhappy customers represented the highest retention priority. Churn validation confirmed that the proposed segmentation aligns closely with observed customer outcomes.
+Analysis identified ten distinct customer segments with materially different churn risks, engagement levels, and revenue contributions. High Value Unhappy and At Risk customers represent the highest-priority retention opportunities due to their combination of customer value and churn probability.
 
-The resulting segmentation framework provides an interpretable and actionable foundation for customer retention decisions before deploying a predictive machine learning model.
+By combining quantified prioritization, targeted retention actions, and segment-specific success metrics, the proposed strategy enables efficient allocation of limited retention resources while maximizing expected business value.

@@ -1,11 +1,11 @@
-segment_name,customer_count
-At Risk,389
-Potential Loyalists,364
-Champions,344
-Discount Sensitive,269
-Loyal Customers,256
-New Customers,208
-Regular Customers,199
-Promising,138
-Dormant,121
-High Value Unhappy,112
+segment_name,customer_count,percentage
+At Risk,389,16.21
+Potential Loyalists,364,15.17
+Champions,344,14.33
+Regular Customers,299,12.46
+Discount Sensitive,269,11.21
+Loyal Customers,256,10.67
+New Customers,208,8.67
+Promising,138,5.75
+High Value Unhappy,112,4.67
+Dormant,21,0.88

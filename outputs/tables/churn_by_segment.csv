@@ -1,8 +1,7 @@
 segment_name,churn_next_60d
-Regular Customers,0.8135593220338984
-Unclassified,0.8
+Dormant,1.0
+Regular Customers,0.7981072555205048
 At Risk,0.7866323907455013
-Dormant,0.7619047619047619
 Discount Sensitive,0.7472118959107806
 High Value Unhappy,0.7232142857142857
 Promising,0.43478260869565216

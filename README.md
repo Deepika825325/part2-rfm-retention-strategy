@@ -283,11 +283,11 @@ part2-rfm-retention-strategy/
 ### Clone Repository
 
 ```bash
-git clone https://github.com/Deepika825325/part4-fastapi-churn-service.git
+git clone https://github.com/Deepika825325/part2-rfm-retention-strategy.git
 cd part2-rfm-retention-strategy
 ```
 
-### Create Virtual Environment
+### Crea
 
 ```bash
 python -m venv .venv
